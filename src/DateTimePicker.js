@@ -35,6 +35,21 @@ Ext.define('Ext.ux.DateTimePicker', {
      */
     minuteText : 'Minutes',
     // </locale>
+    // <locale>
+    /**
+     * @cfg {String} minuteIncrement
+     * How much to increment the min slider
+     */
+    minuteIncrement: 1,
+    // </locale>
+    // <locale>
+    /**
+     * @cfg {String} minuteMax
+     * The maximum value of the slider
+     */
+    minuteMax: 59,
+    // </locale>
+
 
     initEvents: function() {
         var me = this,
@@ -120,9 +135,9 @@ Ext.define('Ext.ux.DateTimePicker', {
             padding: '0 10 10 0',
             focusable : false,
             value: 0,
-            increment: 1,
+            increment: this.minuteIncrement,
             minValue: 0,
-            maxValue: 59,
+            maxValue: this.minuteMax,
             vertical: true
         });
         
